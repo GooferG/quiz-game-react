@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import Card from './components/Card';
+import Quiz from './components/Quiz';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+
+  function startQuiz() {
+    setStarted(true);
+  }
 
   return (
     <div className="App container mx-auto font-karla">
       <div className="container mt-[100px] ">
-        <Card />
+        {started ? <Quiz /> : <Card start={startQuiz} />}
       </div>
     </div>
   );
