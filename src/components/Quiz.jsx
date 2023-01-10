@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Questions from './Questions';
 
 function Quiz() {
   const [quiz, setQuiz] = useState([]);
@@ -27,7 +28,8 @@ function Quiz() {
   return (
     <div>
       <h2>Here is your Quiz:</h2>
-      {question}
+      {/* {question} */}
+      <Questions questions={quiz} />
     </div>
   );
 }
