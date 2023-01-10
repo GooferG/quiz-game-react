@@ -5,8 +5,8 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      <div>
+    <div className="App container mx-auto font-karla">
+      <div className="container mt-[100px] ">
         <Card />
       </div>
     </div>
