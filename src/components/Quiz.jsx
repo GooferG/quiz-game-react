@@ -14,22 +14,13 @@ function Quiz() {
   }, []);
   console.log(quiz);
 
-  const question = quiz.map((question) => {
-    return (
-      <div className="question">
-        <h2 className="font-bold">
-          Question:
-          {question.question}
-        </h2>
-      </div>
-    );
-  });
-
   return (
     <div>
-      <h2>Here is your Quiz:</h2>
-      {/* {question} */}
-      <Questions questions={quiz} />
+      <h2 className="underline font-bold">Here is your Quiz:</h2>
+      <div className="border bg-slate-100 flex">
+        {/* {question} */}
+        <Questions questions={quiz} />
+      </div>
     </div>
   );
 }

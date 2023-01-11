@@ -8,17 +8,22 @@ function Questions(props) {
   );
 
   const quizQuestion = props.questions.map((question) => {
-    return question.question;
+    return (
+      <>
+        <div className="text-center">
+          {question.question.replaceAll('&quot;', '"')}
+          <div className=" flex p-10 border bg-white ">
+            <div className=" flex justify-between content-between">
+              {question.incorrect_answers}
+              {question.correct_answer}
+            </div>
+          </div>
+        </div>
+      </>
+    );
   });
-  const quizAnswers = props.questions.map((question) => {
-    return `${question.incorrect_answers}${question.correct_answer}`;
-  });
-  return (
-    <div>
-      {quizQuestion}
-      {quizAnswers}
-    </div>
-  );
+
+  return <div className="">{quizQuestion}</div>;
 }
 
 export default Questions;
