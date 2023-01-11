@@ -16,8 +16,7 @@ function Quiz() {
 
   return (
     <div>
-      <h2 className="underline font-bold">Here is your Quiz:</h2>
-      <div className="border bg-slate-100 flex">
+      <div className="flex text-center border bg-[#F5F7FB] flex-col ">
         {/* {question} */}
         <Questions questions={quiz} />
       </div>

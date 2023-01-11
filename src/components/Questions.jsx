@@ -13,7 +13,7 @@ function Questions(props) {
         <div className="text-center">
           {question.question.replaceAll('&quot;', '"')}
           <div className=" flex p-10 border bg-white ">
-            <div className=" flex justify-between content-between">
+            <div className=" flex justify-between content-between border">
               {question.incorrect_answers}
               {question.correct_answer}
             </div>

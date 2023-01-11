@@ -11,10 +11,8 @@ function App() {
   }
 
   return (
-    <div className="App mx-auto">
-      <div className="mt-[100px]">
-        {started ? <Quiz /> : <Card start={startQuiz} />}
-      </div>
+    <div className="App mx-auto my-20">
+      <div>{started ? <Quiz /> : <Card start={startQuiz} />}</div>
     </div>
   );
 }
