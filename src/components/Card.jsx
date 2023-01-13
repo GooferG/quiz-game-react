@@ -8,7 +8,7 @@ function Card(props) {
         <p className="text-sm pb-8 ">Some description if needed</p>
         <button
           onClick={props.start}
-          className="btn h-[52px] w-[193px] bg-[#4D5B9E] rounded-[18px] text-white self-center"
+          className="btn h-[52px] w-[193px] rounded-[18px] text-white self-center"
         >
           Start quiz
         </button>

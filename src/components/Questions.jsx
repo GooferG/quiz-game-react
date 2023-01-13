@@ -8,17 +8,21 @@ function Questions(props) {
   );
 
   const quizQuestion = props.questions.map((question) => {
-    let allAnswers = [];
-    allAnswers.push(question.incorrect_answers.join(' , '));
-    allAnswers.push(question.correct_answer);
+    let allAnswers = [...question.incorrect_answers, question.correct_answer];
+
     console.log('all answers:', allAnswers);
     return (
       <>
         <div className="text-center">
           {question.question.replaceAll('&quot;', '"')}
-          <div className=" flex p-5 border bg-white ">
-            <div className=" flex justify-between content-between border">
-              {allAnswers.join(' , ')}
+          <div className=" flex p-5  bg-white">
+            <div className=" flex justify-between content-between gap-8">
+              {/* {allAnswers.join(' , ')} */}
+              {allAnswers.map((answer) => (
+                <div className="border border-[#293264] text-sm p-1 rounded-xl cursor-pointer">
+                  {answer}
+                </div>
+              ))}
             </div>
           </div>
         </div>
