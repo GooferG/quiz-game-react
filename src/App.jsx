@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App mx-auto py-20">
       <div className="bg-white p-5">
-        {started ? <Quiz /> : <Card start={startQuiz} />}
+        {!started ? <Card start={startQuiz} /> : <Quiz />}
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ function Questions(props) {
     })
   );
 
-  const quizQuestion = props.questions.map((question) => {
+  const quizQuestion = props.questions.map((question, index) => {
     let allAnswers = [...question.incorrect_answers, question.correct_answer];
 
     console.log('all answers:', allAnswers);
@@ -17,11 +17,14 @@ function Questions(props) {
           {question.question.replaceAll('&quot;', '"')}
           <div className=" flex p-5  bg-white">
             <div className=" flex justify-between content-between gap-8">
-              {/* {allAnswers.join(' , ')} */}
               {allAnswers.map((answer) => (
                 <>
                   {' '}
-                  <div className="border border-[#293264] text-xs p-1 rounded-xl cursor-pointer">
+                  <div
+                    className="border border-[#293264] text-xs p-1 rounded-xl cursor-pointer"
+                    key={index}
+                    onClick={props.selector}
+                  >
                     {answer}
                   </div>
                 </>

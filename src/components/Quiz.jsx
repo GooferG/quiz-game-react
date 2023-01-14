@@ -5,6 +5,11 @@ function Quiz() {
   const [quiz, setQuiz] = useState([]);
   const [results, setResults] = useState([]);
 
+  function clickTracker(e) {
+    const selectedAsnwers = e.target.outerText;
+    console.log(selectedAsnwers);
+  }
+
   useEffect(() => {
     async function getQuiz() {
       const res = await fetch('https://opentdb.com/api.php?amount=5');
@@ -19,7 +24,7 @@ function Quiz() {
     <div>
       <div className="flex text-center flex-col text-[#293264] font-bold">
         {/* {question} */}
-        <Questions questions={quiz} />
+        <Questions questions={quiz} selector={clickTracker} />
       </div>
       <div className="flex justify-center pt-10">
         <button className="btn h-[52px] w-[193px] bg-[#4D5B9E] rounded-[18px] text-white justify-">
