@@ -1,12 +1,6 @@
 import React from 'react';
 
 function Questions(props) {
-  console.log(
-    props.questions.map((question) => {
-      return question.question;
-    })
-  );
-
   const quizQuestion = props.questions.map((question, index) => {
     let allAnswers = [...question.incorrect_answers, question.correct_answer];
 
