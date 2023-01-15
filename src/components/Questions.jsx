@@ -4,6 +4,13 @@ function Questions(props) {
   const quizQuestion = props.questions.map((question, index) => {
     let allAnswers = [...question.incorrect_answers, question.correct_answer];
 
+    function shuffleArr() {
+      return allAnswers.sort(() => Math.random() - 0.5);
+    }
+
+    const shuffledAnswers = shuffleArr(allAnswers);
+    console.log(shuffledAnswers);
+
     console.log('all answers:', allAnswers);
     return (
       <>

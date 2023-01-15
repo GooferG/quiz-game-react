@@ -18,7 +18,6 @@ function Quiz() {
     }
     getQuiz();
   }, []);
-  console.log(quiz);
 
   return (
     <div>
