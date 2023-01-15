@@ -9,16 +9,16 @@ function Questions(props) {
     }
 
     const shuffledAnswers = shuffleArr(allAnswers);
-    console.log(shuffledAnswers);
 
-    console.log('all answers:', allAnswers);
     return (
       <>
         <div className="text-left pt-3">
-          {question.question.replaceAll('&quot;', '"')}
+          {question.question
+            .replaceAll('&quot;', '"')
+            .replaceAll('&#039;', "'")}
           <div className=" flex p-5  bg-white">
             <div className=" flex justify-between content-between gap-8">
-              {allAnswers.map((answer) => (
+              {shuffledAnswers.map((answer) => (
                 <>
                   {' '}
                   <div

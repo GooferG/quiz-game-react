@@ -6,6 +6,7 @@ function Quiz() {
   const [results, setResults] = useState([]);
 
   function clickTracker(e) {
+    e.preventDefault();
     const selectedAsnwers = e.target.outerText;
     console.log(selectedAsnwers);
   }
