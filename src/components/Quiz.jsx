@@ -8,7 +8,7 @@ function Quiz() {
   function clickTracker(e) {
     e.preventDefault();
     const selectedAsnwers = e.target.outerText;
-    console.log(selectedAsnwers);
+    console.log(selectedAsnwers, e.target);
   }
 
   useEffect(() => {

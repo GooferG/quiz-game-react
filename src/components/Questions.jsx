@@ -22,7 +22,7 @@ function Questions(props) {
                 <>
                   {' '}
                   <div
-                    className="border border-[#293264] text-xs p-1 rounded-xl cursor-pointer"
+                    className=" hover:border-dotted border-[#293264] text-[10px] p-1 rounded-xl cursor-pointer outline outline-[.5px]"
                     key={index}
                     onClick={props.selector}
                   >
