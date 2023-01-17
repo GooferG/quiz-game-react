@@ -6,16 +6,21 @@ function Quiz() {
   const [results, setResults] = useState([]);
 
   function clickTracker(e) {
-    e.preventDefault();
     const selectedAsnwers = e.target.outerText;
     console.log(selectedAsnwers, e.target);
+    setResults((prevState) => ({
+      ...prevState,
+      answer: e.target.outerText,
+    }));
   }
+  console.log(results);
 
   useEffect(() => {
     async function getQuiz() {
       const res = await fetch('https://opentdb.com/api.php?amount=5');
       const data = await res.json();
       setQuiz(data.results);
+      setResults(data.results.map((question) => question.correct_answer));
     }
     getQuiz();
   }, []);
