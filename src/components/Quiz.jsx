@@ -13,14 +13,18 @@ function Quiz() {
       answer: e.target.outerText,
     }));
   }
-  console.log(results);
+  console.log('resuls state:', results, 'quiz:', quiz);
 
   useEffect(() => {
     async function getQuiz() {
       const res = await fetch('https://opentdb.com/api.php?amount=5');
       const data = await res.json();
       setQuiz(data.results);
-      setResults(data.results.map((question) => question.correct_answer));
+      setResults(
+        data.results.map((question) => ({
+          correct_answer: question.correct_answer,
+        }))
+      );
     }
     getQuiz();
   }, []);
