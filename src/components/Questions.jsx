@@ -23,7 +23,7 @@ function Questions(props) {
                   {' '}
                   <div
                     className=" border-[#293264] text-[10px] p-1 rounded-xl cursor-pointer outline outline-[.5px] "
-                    key={index}
+                    key={props.id}
                     onClick={props.selector}
                   >
                     {answer}
