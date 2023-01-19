@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import Card from './components/Card';
+import { useState, useEffect } from 'react';
+import Frontpage from './components/FrontPage';
 import Quiz from './components/Quiz';
+import { nanoid } from 'nanoid';
 import './App.css';
 
 function App() {
@@ -80,13 +81,46 @@ function App() {
   };
 
   // Update previous quiz data to show the answer selection
-  const handleSelecterAnswer = (id, selectedAnswer) => {};
+  const handleSelectedAnswer = (id, selectedAnswer) => {
+    setQuizData((quizData) =>
+      quizData.map((data) => {
+        return data.id === id ? { ...data, selected: selectedAnswer } : data;
+      })
+    );
+  };
+
+  const questionElement = quizData.map((data) => {
+    return (
+      <Quiz
+        id={data.id}
+        key={data.id}
+        question={data.question}
+        allAnswers={data.allAnswers}
+        quizData={data}
+        handleSelectedAnswer={handleSelectedAnswer}
+      />
+    );
+  });
 
   return (
-    <div className="App mx-auto py-20">
-      <div className="bg-white p-5">
-        {!quizStarted ? <Card start={startQuiz} /> : <Quiz />}
-      </div>
+    <div className="main-container">
+      {quizStarted ? (
+        <div className="content-container">
+          {questionElement}
+          <div>
+            {checked && <div>You Scored {score}/5 correct answers </div>}
+
+            <button
+              className="submit-button"
+              onClick={checked ? handlePlayAgain : handleCheckAnswer}
+            >
+              {checked ? 'Play Again' : 'Check Answers'}
+            </button>
+          </div>
+        </div>
+      ) : (
+        <Frontpage startQuiz={handleStartQuiz} />
+      )}
     </div>
   );
 }
