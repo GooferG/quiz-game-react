@@ -51,7 +51,36 @@ function App() {
   // Review all answers to check if correct
   const handleCheckAnswer = () => {
     let selected = true;
+
+    quizData.forEach((prevQuizData) => {
+      if (prevQuizData.selected == null) {
+        selected = false;
+        return;
+      }
+    });
+    if (!selected) {
+      return;
+    }
+    setQuizData((prevQuizData) =>
+      prevQuizData.map((data) => {
+        return {
+          ...data,
+          checked: true,
+        };
+      })
+    );
+    setChecked(true);
+    let currentScore = 0;
+    quizData.forEach((prevQuizData) => {
+      if (prevQuizData.correctAnswer === prevQuizData.selected) {
+        currentScore += 1;
+      }
+    });
+    setScore(currentScore);
   };
+
+  // Update previous quiz data to show the answer selection
+  const handleSelecterAnswer = (id, selectedAnswer) => {};
 
   return (
     <div className="App mx-auto py-20">
