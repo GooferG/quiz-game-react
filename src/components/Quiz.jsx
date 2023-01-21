@@ -1,6 +1,7 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import { decode } from 'html-entities';
+import './Quiz.css';
 
 function Quiz(props) {
   const allAnswers = props.allAnswers;
@@ -41,11 +42,13 @@ function Quiz(props) {
 
   return (
     <div>
-      <div>
-        <div>{decode(props.question)}</div>
+      <div className="QuestionContainer w-full text-left mt-[20px] p-[5px] ml-[10px] sm:mt-[30px]">
+        <div className="Question font-karla sm:m-auto flex-wrap">
+          {decode(props.question)}
+        </div>
         {answerElement}
       </div>
-      <div></div>
+      <div className="LineDiv border-[1px] border-[#dbdef0] mt-[5px]"></div>
     </div>
   );
 }

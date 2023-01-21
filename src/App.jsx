@@ -3,6 +3,7 @@ import Frontpage from './components/FrontPage';
 import Quiz from './components/Quiz';
 import { nanoid } from 'nanoid';
 import './App.css';
+import './components/Quiz.css';
 
 function App() {
   const [quizData, setQuizData] = useState([]);
@@ -107,12 +108,16 @@ function App() {
       {quizStarted ? (
         <div className="content-container">
           {questionElement}
-          <div>
-            {checked && <div>You Scored {score}/5 correct answers </div>}
+          <div className="ButtonContainer flex justify-center items-center mt-[20px] mb-[20px] bg-[#f5f7fb] sm:mt-[10px]">
+            {checked && (
+              <div className="FinalScore font-karla text-[15px]">
+                You Scored {score}/5 correct answers{' '}
+              </div>
+            )}
 
             <button
               className="submit-button"
-              onClick={checked ? handlePlayAgain : handleCheckAnswer}
+              onClick={checked ? quizPlayAgain : handleCheckAnswer}
             >
               {checked ? 'Play Again' : 'Check Answers'}
             </button>
