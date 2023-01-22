@@ -3,7 +3,7 @@ import './Quiz.css';
 
 export default function FrontPage(props) {
   return (
-    <div className="text-center frontpage-container">
+    <div className="frontpage-container">
       <div className="frontpage-content-container">
         <h1 className="text-center font-karla text-[31.25px] leading-[50px] text-[#293264]">
           Quizzzzz

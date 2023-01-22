@@ -29,8 +29,8 @@ function Quiz(props) {
         id={id}
         className={
           props.quizData.selected === answer
-            ? ' answer-button selected-answer-button'
-            : 'answer-button'
+            ? ' answer-button selected-answer-button '
+            : 'answer-button border-2'
         }
         key={nanoid()}
         onClick={() => selectedAnswer(answer)}
@@ -46,7 +46,7 @@ function Quiz(props) {
         <div className="Question font-karla sm:m-auto flex-wrap">
           {decode(props.question)}
         </div>
-        {answerElement}
+        <div className="flex overflow-auto">{answerElement}</div>
       </div>
       <div className="LineDiv border-[1px] border-[#dbdef0] mt-[5px]"></div>
     </div>
