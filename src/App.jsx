@@ -14,6 +14,8 @@ function App() {
   const randomizeAnswers = (arr) => arr.sort(() => Math.random() - 0.5);
 
   // Get Quiz data and set it in state when quiz starts
+  // category API URL: https://opentdb.com/api_category.php
+  // category URL search for 5 questions: https://opentdb.com/api.php?amount=5&category=9
   useEffect(() => {
     const getQuizData = async () => {
       const res = await fetch('https://opentdb.com/api.php?amount=5');
