@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Frontpage from './components/FrontPage';
 import Quiz from './components/Quiz';
 import { nanoid } from 'nanoid';
-import './App.css';
 import './components/Quiz.css';
 
 function App() {
@@ -104,19 +103,19 @@ function App() {
   });
 
   return (
-    <div className="main-container">
+    <div className="main-container flex align-center bg-[#f5f7fb] ">
       {quizStarted ? (
         <div className="content-container">
           {questionElement}
-          <div className="ButtonContainer flex justify-center items-center mt-[20px] mb-[20px] bg-[#f5f7fb] sm:mt-[10px]">
+          <div className="ButtonContainer flex justify-center items-center mt-[20px] mb-[20px]  sm:mt-[10px]">
             {checked && (
-              <div className="FinalScore font-karla text-[15px]">
+              <div className="FinalScore font-karla text-[15px] text-[#293264] font-bold justify-center content-center">
                 You Scored {score}/5 correct answers{' '}
               </div>
             )}
 
             <button
-              className="submit-button"
+              className="bg-[#4d5b9e] rounded-xl text-[#f5f7fb] w-[170px] h-[45px] flex justify-center items-center m-auto font-karla text-md text-center cursor-pointer"
               onClick={checked ? quizPlayAgain : handleCheckAnswer}
             >
               {checked ? 'Play Again' : 'Check Answers'}

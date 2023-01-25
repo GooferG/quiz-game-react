@@ -42,11 +42,11 @@ function Quiz(props) {
 
   return (
     <div>
-      <div className="QuestionContainer w-full text-left mt-[20px] p-[5px] ml-[10px] sm:mt-[30px]">
+      <div className="QuestionContainer w-full text-left mt-[20px] p-[5px] ml-[10px] sm:mt-[30px] ">
         <div className="Question font-karla sm:m-auto flex-wrap">
           {decode(props.question)}
         </div>
-        <div className="flex overflow-auto">{answerElement}</div>
+        <div className="flex overflow-auto ">{answerElement}</div>
       </div>
       <div className="LineDiv border-[1px] border-[#dbdef0] mt-[5px]"></div>
     </div>

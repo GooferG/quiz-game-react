@@ -5,19 +5,12 @@
   box-sizing: border-box;
 }
 
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  width: 100vw;
-  height: 100vh;
-}
-
-.main-container {
+/* .main-container {
   background-color: #f5f7fb;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .frontpage-container {
   display: grid;
@@ -73,24 +66,10 @@ body {
   background-color: #d6dbf5;
 }
 
-.submit-button {
-  border-radius: 30px;
-  padding: 15px;
-  margin-left: 20px;
-  background-color: #4d5b9e;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
   .content-container {
     margin: 10px;
 
     height: 100vh;
-  }
-
-  .submit-button {
-    border-color: black;
   }
 }
