@@ -18,7 +18,7 @@ function App() {
   // category URL search for 5 questions: https://opentdb.com/api.php?amount=5&category=9
   useEffect(() => {
     const getQuizData = async () => {
-      const res = await fetch('https://opentdb.com/api.php?amount=5');
+      const res = await fetch(`https://opentdb.com/api.php?amount=5`);
       const data = await res.json();
 
       const customQuizData = [];
@@ -39,6 +39,14 @@ function App() {
     };
     getQuizData();
   }, [count]);
+
+  // Choose cetogory
+  const chooseCategory = async () => {
+    const res = await fetch(`https://opentdb.com/api_category.php`);
+    const data = await res.json();
+
+    const customQuizCategories = [];
+  };
 
   // Start quiz
   const handleStartQuiz = () => {
